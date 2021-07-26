@@ -22,7 +22,7 @@ export default function SignIn() {
 
   const { register, handleSubmit, formState } = useForm<SignInFormData>({
     resolver: yupResolver(signInFormSchema),
-  });
+  });  
 
   const handleSignIn: SubmitHandler<SignInFormData> = async data => {
     await new Promise(resolve => setTimeout(resolve, 2000));

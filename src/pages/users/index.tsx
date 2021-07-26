@@ -8,6 +8,7 @@ import {
   Flex,
   Heading,
   Icon,
+  IconButton,
   Link,
   Spinner,
   Stack,
@@ -71,30 +72,66 @@ export default function UsersList() {
               )}
             </Heading>
 
-            <Stack direction="row" spacing="3">
-              <Button
-                size="sm"
-                fontSize="sm"
-                colorScheme="blue"
-                leftIcon={<Icon as={RiRefreshLine} fontSize="20" />}
-                onClick={() => refetch()}
-                disabled={isLoading || isFetching}
-              >
-                Atualizar
-              </Button>
+            {
+              isWideVersion && (
+                <Stack direction="row" spacing="3">
+                  <Button
+                    size="sm"
+                    fontSize="sm"
+                    colorScheme="blue"
+                    leftIcon={<Icon as={RiRefreshLine} fontSize="20" />}
+                    onClick={() => refetch()}
+                    disabled={isLoading || isFetching}
+                  >
+                    Atualizar
+                  </Button>
 
-              <NextLink href="/users/create" passHref>
-                <Button
-                  as="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="pink"
-                  leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-                >
-                  Criar novo usuário
-                </Button>
-              </NextLink>
-            </Stack>
+                  <NextLink href="/users/create" passHref>
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="sm"
+                      colorScheme="pink"
+                      leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+                    >
+                      Criar novo usuário
+                    </Button>
+                  </NextLink>
+                </Stack>
+              )
+            }
+
+            {
+              !isWideVersion && (
+                <Stack direction="row" spacing="3">
+                  <IconButton
+                    aria-label='Atualizar'
+                    size='sm'
+                    fontSize="sm"
+                    colorScheme="blue"
+                    icon={<Icon as={RiRefreshLine} fontSize="20" />}
+                    onClick={() => refetch()}
+                    disabled={isLoading || isFetching}
+                  >
+                    Atualizar
+                  </IconButton>
+                  <NextLink href="/users/create" passHref>
+                    <IconButton
+                      aria-label='Criar'
+                      as="a"
+                      size="sm"
+                      fontSize="sm"
+                      colorScheme="pink"
+                      icon={<Icon as={RiAddLine} fontSize="20" />}
+                    >
+                      Criar novo usuário
+                    </IconButton>
+                  </NextLink>
+
+                </Stack>
+              )
+            }
+
           </Flex>
 
           {isLoading ? (

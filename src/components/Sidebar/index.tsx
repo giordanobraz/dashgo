@@ -27,9 +27,8 @@ export function Sidebar() {
           <DrawerContent bg="gray.800" padding="4">
             <DrawerCloseButton marginTop="6" />
             <DrawerHeader>Navegação</DrawerHeader>
-
             <DrawerBody>
-              <SidebarNav />
+              <SidebarNav /> {/* Itens da Navegação */}
             </DrawerBody>
           </DrawerContent>
         </DrawerOverlay>

@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <SidebarDrawerProvider>
+        <SidebarDrawerProvider> {/* Contexto customizado feito para abrir e fechar a navegação lateral em Mobile */}
           <Component {...pageProps} />
         </SidebarDrawerProvider>
       </ChakraProvider>

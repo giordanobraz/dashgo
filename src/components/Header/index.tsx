@@ -12,8 +12,8 @@ export function Header() {
   const { onOpen } = useSidebarDrawer();
 
   const isWideVersion = useBreakpointValue({
-    base: false,
-    lg: true,
+    base: false, // Padrão, não visível
+    lg: true, // Se tamanho da tela for Large, visível
   });
 
   return (
@@ -27,12 +27,12 @@ export function Header() {
       paddingX="6"
       align="center"
     >
-      {!isWideVersion && (
-        <IconButton
+      {!isWideVersion && ( /* Se não estiver na versão LARGE (lg) */
+      <IconButton /* Quando o Botão é apenas um ícone */
           aria-label="Open navigation"
           icon={<Icon as={RiMenuLine} />}
           fontSize="24"
-          variant="unstyled"
+          variant="unstyled" /* Botão sem estilo */
           onClick={onOpen}
           marginRight="2"
         ></IconButton>

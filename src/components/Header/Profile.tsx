@@ -9,17 +9,17 @@ export function Profile({ showProfileData = true }: ProfileProps) {
     <Flex align="center">
       {showProfileData && (
         <Box marginRight="4" textAlign="right">
-          <Text>Elias Gabriel</Text>
+          <Text>Giordano Bruno</Text>
           <Text color="gray.300" fontSize="small">
-            elias.gabriel@rocketseat.team
+            eu@giordanobruno.dev
           </Text>
         </Box>
       )}
 
       <Avatar
         size="md"
-        name="Elias Gabriel"
-        src="https://github.com/EliasGcf.png"
+        name="Giordano Bruno"
+        src="https://avatars.githubusercontent.com/u/14043484?v=4"
       />
     </Flex>
   );

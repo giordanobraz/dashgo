@@ -10,11 +10,9 @@ type SidebarDrawerContextData = UseDisclosureReturn;
 
 const SidebarDrawerContext = createContext({} as SidebarDrawerContextData);
 
-export function SidebarDrawerProvider({
-  children,
-}: SidebarDrawerProviderProps) {
-  const disclosure = useDisclosure();
-  const router = useRouter();
+export function SidebarDrawerProvider({children}: SidebarDrawerProviderProps) {  
+  const disclosure = useDisclosure(); // Hook do Chakra UI, que possibilita abrir e fechar o menu lateral em telas menores
+  const router = useRouter(); // Hook do Next.js para navegação
 
   useEffect(() => {
     disclosure.onClose();

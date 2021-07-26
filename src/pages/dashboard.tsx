@@ -1,9 +1,8 @@
 import { Box, Flex, SimpleGrid, Text, theme } from '@chakra-ui/react';
 import { ApexOptions } from 'apexcharts';
-import dynamic from 'next/dynamic';
-
 import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
+import dynamic from 'next/dynamic';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -21,12 +20,12 @@ const options: ApexOptions = {
     axisBorder: { color: theme.colors.gray['600'] },
     axisTicks: { color: theme.colors.gray['600'] },
     categories: [
-      '2021-04-02T00:00:00:00.000Z',
-      '2021-04-03T00:00:00:00.000Z',
-      '2021-04-04T00:00:00:00.000Z',
-      '2021-04-05T00:00:00:00.000Z',
-      '2021-04-06T00:00:00:00.000Z',
-      '2021-04-07T00:00:00:00.000Z',
+      'Wed Jul 21 2021 00:00:00 GMT-0300',
+      'Thu Jul 22 2021 00:00:00 GMT-0300',
+      'Fri Jul 23 2021 00:00:00 GMT-0300',
+      'Sat Jul 24 2021 00:00:00 GMT-0300',
+      'Sun Jul 25 2021 00:00:00 GMT-0300',
+      'Mon Jul 26 2021 00:00:00 GMT-0300',
     ],
   },
   fill: {
@@ -40,7 +39,7 @@ const options: ApexOptions = {
   },
 };
 
-const series = [{ name: 'series1', data: [57, 36, 13, 29, 6, 19] }];
+const series = [{ name: 'series1', data: [57, 36, 13, 59, 6, 19] }];
 
 export default function Dashboard() {
   return (
